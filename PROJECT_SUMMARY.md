@@ -166,9 +166,7 @@ API Layer: Axios (with JWT token via localStorage)
 Architecture: Modular (by domain/feature)
 
 📁 Folder Structure (Modular by Feature)
-bash
-Copy
-Edit
+```
 src/
 ├── modules/
 │   ├── auth/
@@ -185,6 +183,8 @@ src/
 ├── App.jsx                # App layout shell
 ├── main.jsx               # Entry point
 ├── index.css              # Tailwind base + Flowbite import
+```
+
 ✅ Completed
 JWT-based login (/auth/login) connected to FastAPI backend
 
