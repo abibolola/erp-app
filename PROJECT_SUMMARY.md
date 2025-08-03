@@ -66,3 +66,84 @@ erp-app/
 - ✅ Route-level protection planned via permission decorators like:
   ```python
   @requires_permission("edit_crm")
+
+  # ERP Project Summary
+
+## ✅ Current Tech Stack
+
+* **Backend**: Python + FastAPI (sync version for now)
+* **ORM**: SQLAlchemy (declarative base)
+* **DB**: PostgreSQL (via Docker)
+* **Password Hashing**: passlib\[bcrypt]
+* **Environment Management**: `.env` file
+* **Containerization**: Docker + Docker Compose
+* **Seeder Strategy**: Modular seed files per module (e.g., `seed_crm.py`, `seed_roles.py`)
+
+---
+
+## 📁 Folder Structure
+
+```
+erp-app/
+├── app/
+│   ├── api/                # API routers (auth, user, etc.)
+│   ├── core/               # Configs (settings, security)
+│   ├── db/                
+│   │   ├── seeds/          # Modular seeders
+│   │   │   ├── seed_roles.py
+│   │   │   ├── seed_permissions.py
+│   │   │   └── __init__.py
+│   │   └── session.py      # DB connection (SessionLocal, get_db)
+│   ├── models/             # SQLAlchemy models
+│   ├── schemas/            # Pydantic models (TO DO)
+│   ├── services/           # Business logic (upcoming)
+│   └── main.py             # FastAPI entry point
+├── alembic/                # DB migrations (to be added)
+├── .env                    # DB credentials & secrets
+├── Dockerfile              # Backend container
+├── docker-compose.yml      # App + PostgreSQL + Redis (optional)
+└── README.md
+```
+
+---
+
+## ✅ Completed Milestones
+
+* ✔️ Project folder structured
+* ✔️ GitHub repo connected and working (`abibolola/erp-app`)
+* ✔️ PostgreSQL connected via Docker
+* ✔️ All core models defined:
+
+  * `User`, `Role`, `Permission`, `RolePermission`, `Organization`
+* ✔️ Modular seeders created and run successfully
+* ✔️ Docker Compose working (PostgreSQL)
+* ✔️ DB session and connection logic tested
+
+---
+
+## 🛠️ Next Tasks
+
+* ⏳ Create schemas (`user.py`, `role.py`, `permission.py`, `auth.py`)
+* ⏳ Set up auth logic:
+
+  * `/register` and `/login`
+  * JWT creation
+  * Password hashing/verification
+* ⏳ Add API routers for user & auth
+* ⏳ Add simple Swagger UI and Jinja2 admin test panel
+
+---
+
+## 🔮 Coming Later
+
+* ✅ Modular seeders for each module (`crm`, `hr`, `inventory`, etc.)
+* 🛠️ Alembic migrations
+* 🛠️ Role-based permission enforcement (middleware)
+* 🛠️ AI Agent/API integration for CRM automation
+* 🛠️ Mobile integration via FastAPI
+* 🛠️ Frontend repo (planned for React + Tailwind or similar)
+
+---
+
+*Last Updated: August 1, 2025*
+
