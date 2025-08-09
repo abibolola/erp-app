@@ -147,3 +147,60 @@ erp-app/
 
 *Last Updated: August 1, 2025*
 
+---
+Ausgust 4, 2025
+---
+
+ERP Frontend Summary (React + Vite + Tailwind)
+🔧 Stack
+Framework: React (Vite-powered)
+
+Styling: Tailwind CSS + Flowbite (UI components)
+
+Routing: React Router
+
+State: React Hooks (for now)
+
+API Layer: Axios (with JWT token via localStorage)
+
+Architecture: Modular (by domain/feature)
+
+📁 Folder Structure (Modular by Feature)
+```
+src/
+├── modules/
+│   ├── auth/
+│   │   ├── pages/         # Login.jsx
+│   │   └── services/      # authApi.js
+│   ├── crm/
+│   │   ├── pages/         # LeadsList.jsx
+│   │   ├── components/    # LeadTable.jsx, LeadForm.jsx
+│   │   └── services/      # leadApi.js
+├── shared/
+│   ├── components/        # AppButton, AppLayout, AppModal, etc.
+│   └── utils/             # api.js (Axios), token.js
+├── router.jsx             # Central route config
+├── App.jsx                # App layout shell
+├── main.jsx               # Entry point
+├── index.css              # Tailwind base + Flowbite import
+```
+
+✅ Completed
+JWT-based login (/auth/login) connected to FastAPI backend
+
+Role-based route protection with token-based Axios instance
+
+LeadsList renders dynamic data from /leads
+
+Modular structure ready for CRM, HR, Inventory
+
+Flowbite installed and ready for UI component use
+
+🧭 Next Steps (Optional)
+Add LeadForm to create leads
+
+Add sidebar layout for navigation
+
+Add protected route wrapper for authenticated access
+
+Expand CRM with Contacts, Pipeline
