@@ -6,5 +6,10 @@ jinja2
 python-dotenv
 alembic
 pydantic
+pydantic_settings
 redis
 celery
+passlib
+jose
+python-jose
+pydantic[email]

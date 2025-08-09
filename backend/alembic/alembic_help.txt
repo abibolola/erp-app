@@ -1,0 +1,6 @@
+🔧 Summary Table
+Task	Run this
+Add new model or field	alembic revision --autogenerate -m "Add X"
+Apply the change	alembic upgrade head
+Roll back the last change	alembic downgrade -1
+Reapply everything from scratch	alembic upgrade head after resetting DB
