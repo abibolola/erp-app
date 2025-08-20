@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./modules/auth/pages/Login";
-import LeadsList from "./modules/crm/pages/LeadsList";
+import Login from "./modules/auth/pages/login";
+import LeadsList from "./modules/crm/pages/leads_list";
 
 const Router = () => {
   return (
