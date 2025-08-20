@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchLeads } from "../services/leadApi";
+import { fetchLeads } from "../services/lead_api";
 
 const LeadsList = () => {
   const [leads, setLeads] = useState([]);
