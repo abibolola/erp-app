@@ -8,6 +8,7 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     user_id: int
     username: str
+    token_type: Optional[str] = "access"  # Add this field if missing
 
 class LoginRequest(BaseModel):
     email: EmailStr

@@ -27,6 +27,7 @@
 - ✅ Frontend: React + Vite + Tailwind CSS
 - ✅ Database migrations with Alembic
 - ✅ Docker containerization setup
+- ✅ **Complete snake_case conversion across entire codebase**
 
 ### 🔐 Security Layer (100%)
 - ✅ **HttpOnly Cookies** implementation (replacing localStorage)

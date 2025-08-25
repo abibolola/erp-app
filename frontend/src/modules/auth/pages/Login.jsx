@@ -1,50 +1,46 @@
-import { useState } from "react";
-import { login } from "../services/auth_api";
+import { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import use_auth_store from '../../../shared/stores/use_auth_store';
+import LoginForm from '../components/login_form';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { login, loading, error } = use_auth_store();
+  const [show_password, set_show_password] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      const data = await login(email, password);
-      localStorage.setItem("token", data.access_token);
-      window.location.href = "/crm/leads"; // or use navigate()
-    } catch (err) {
-      setError("Invalid credentials");
+  const handle_login = async (form_data) => {
+    const result = await login(form_data.email, form_data.password);
+    if (result.success) {
+      navigate('/');
     }
   };
 
   return (
-    <div className="max-w-sm mx-auto mt-10">
-      <h2 className="text-xl font-bold mb-4">Login</h2>
-      {error && <p className="text-red-500">{error}</p>}
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          className="w-full p-2 border rounded"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        <div>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+            Sign in to your account
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+            Or{' '}
+            <Link
+              to="/auth/register"
+              className="font-medium text-blue-600 hover:text-blue-500"
+            >
+              create a new account
+            </Link>
+          </p>
+        </div>
+        
+        <LoginForm 
+          on_submit={handle_login}
+          loading={loading}
+          error={error}
+          show_password={show_password}
+          on_toggle_password={() => set_show_password(!show_password)}
         />
-        <input
-          className="w-full p-2 border rounded"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded w-full"
-        >
-          Login
-        </button>
-      </form>
+      </div>
     </div>
   );
 };

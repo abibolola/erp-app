@@ -1,5 +1,7 @@
-nums = [2, 7, 11, 15]
-target = 9
+s = "anagram"
+t = "nagaram"
 
-print(enumerate(nums))
-    
+def ident(x, y):
+    if x[::1] == y:
+        return True
+    return False
