@@ -1,7 +1,30 @@
 # Start backend
 cd backend
 uvicorn app.main:app --reload
+OR
+uvicorn app.main:app --reload --port 8000
 
 # Start frontend
 cd frontend
 npm run dev
+
+# In backend directory
+alembic upgrade head
+
+# If you get an error about missing tables, create a new migration:
+alembic revision --autogenerate -m "Initial migration"
+alembic upgrade head
+
+
+# TEST ENDPOINTS
+# Terminal 3 - Test basic health
+curl http://localhost:8000/health
+
+# Test database health
+curl http://localhost:8000/health/db
+
+# Test readiness
+curl http://localhost:8000/health/ready
+
+# Check API docs
+open http://localhost:8000/docs

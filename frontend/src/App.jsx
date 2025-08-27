@@ -12,6 +12,7 @@ import Login from './modules/auth/pages/login';
 import Register from './modules/auth/pages/register';
 import Dashboard from './modules/dashboard/pages/dashboard';
 import LeadsList from './modules/crm/pages/leads_list';
+import TestConnection from './modules/auth/pages/test_connection';
 
 // Stores
 import use_auth_store from './shared/stores/use_auth_store';
@@ -46,6 +47,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Public routes */}
+          <Route path="/test" element={<TestConnection />} />
           <Route path="/auth/login" element={<Login />} />
           <Route path="/auth/register" element={<Register />} />
           
