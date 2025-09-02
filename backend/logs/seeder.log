@@ -1,0 +1,18 @@
+2025-09-02 15:19:48,342 - __main__ - DEBUG - Verbose logging enabled
+2025-09-02 15:19:48,342 - __main__ - INFO - Environment 'development' mapped to seeding mode: development
+2025-09-02 15:19:48,517 - __main__ - INFO - Found 7 existing tables - skipping schema creation
+2025-09-02 15:19:48,517 - __main__ - DEBUG - Existing tables: organization, user, role, rolepermission, permission, alembic_version, lead
+2025-09-02 15:19:48,526 - app.db.seeds.seed_factory - INFO - Initialized SeederOrchestrator in development mode
+2025-09-02 15:19:48,526 - app.db.seeds.seed_factory - DEBUG - Initialized CRMSeeder in development mode
+2025-09-02 15:19:48,535 - app.db.seeds.seed_factory - INFO - [1/1] Executing crm seeder...
+2025-09-02 15:19:48,564 - app.db.seeds.seed_factory - WARNING - [CRM] No organizations found - CRM requires organizations
+2025-09-02 15:19:48,564 - app.db.seeds.seed_factory - DEBUG - Starting create_default_org in CRMSeeder
+2025-09-02 15:19:48,564 - app.db.seeds.seed_factory - ERROR - Transaction failed in create_default_org (0ms): 'description' is an invalid keyword argument for Organization
+2025-09-02 15:19:48,566 - app.db.seeds.seed_factory - ERROR - [CRM] Failed to create default organization: 'description' is an invalid keyword argument for Organization
+2025-09-02 15:19:48,566 - app.db.seeds.seed_factory - ERROR - Dependencies not met for crm
+2025-09-02 15:19:48,569 - app.db.seeds.seed_factory - INFO - Orchestration summary: 1 modules, 0 operations, 1 errors, 36ms
+2025-09-02 15:19:48,573 - __main__ - INFO - Seeding legacy modules (development mode only)...
+2025-09-02 15:19:48,600 - __main__ - ERROR - Legacy module seeding failed: module 'app.db.seeds.seed_users' has no attribute 'seed_test_user'
+2025-09-02 15:19:48,601 - __main__ - WARNING - Continuing despite legacy seeding errors (non-production mode)
+2025-09-02 15:19:48,606 - __main__ - DEBUG - Database session closed
+2025-09-02 15:19:48,606 - __main__ - INFO - Environment 'development' mapped to seeding mode: development

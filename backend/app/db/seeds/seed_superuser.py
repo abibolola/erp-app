@@ -1,6 +1,7 @@
 from app.db.session import SessionLocal
 from app.models.user import User
-from app.services.auth_service import get_password_hash, create_access_token
+from app.core.security import create_access_token
+from app.services.auth_service import get_password_hash
 
 def seed_superuser():
     db = SessionLocal()
